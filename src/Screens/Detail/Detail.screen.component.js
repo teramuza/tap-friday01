@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
-import {routes} from '../../Routes/routes';
+import {Routes} from '../../Navigations/Routes';
 import {NavigationProp} from '@react-navigation/native';
 
 type Props = {
@@ -27,7 +27,7 @@ const DetailScreen = ({
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text onPress={() => navigation.navigate(routes.HomeScreen)}>
+      <Text onPress={() => navigation.navigate(Routes.HomeScreen)}>
         Detail Screen
       </Text>
       <TextInput

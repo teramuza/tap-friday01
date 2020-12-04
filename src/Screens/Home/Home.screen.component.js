@@ -11,8 +11,8 @@ import {
 import {Styles} from './Home.screen.style';
 import {IMAGES} from '../../Themes';
 import {NavigationProp} from '@react-navigation/native';
-import {keyExtractor, renderScreen} from '../../Utils/Helpers.utils';
-import {routes} from '../../Routes/routes';
+import {keyExtractor, renderScreen} from '../../Utils/Helpers.util';
+import {Routes} from '../../Navigations/Routes';
 
 type Props = {
   navigation: NavigationProp,
@@ -81,7 +81,7 @@ const HomeScreen = ({
 
     return (
       <TouchableWithoutFeedback
-        onPress={() => navigation.navigate(routes.DetailScreen)}>
+        onPress={() => navigation.navigate(Routes.DetailScreen)}>
         <View style={Styles.card}>
           <Image style={Styles.imageCard} source={imageCard} />
           <Text style={Styles.textCard}>{item.title}</Text>
