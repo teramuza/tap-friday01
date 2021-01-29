@@ -1,28 +1,19 @@
 // @flow
 
 import React, {useState} from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {Text, TextInput, View, TouchableOpacity} from 'react-native';
+import {Styles} from './Detail.screen.style';
 import {Routes} from '../../Navigations/Routes';
 import {NavigationProp} from '@react-navigation/native';
 
 type Props = {
   navigation: NavigationProp,
-  count: number,
-  increaseCount: Function,
-  decreaseCount: Function,
+  person: Object,
+  setData: Function,
 };
 
-const DetailScreen = ({
-  navigation,
-  count,
-  increaseCount,
-  decreaseCount,
-}: Props) => {
-  const initialState = {
-    name: 'Raja',
-    age: 18,
-  };
-  const [state, setState] = useState(initialState);
+const DetailScreen = ({navigation, person, setData}: Props) => {
+  const [state, setState] = useState(person);
   const {name, age} = state;
 
   return (
@@ -38,8 +29,14 @@ const DetailScreen = ({
       <TextInput
         keyboardType="numeric"
         style={{width: 200, height: 40, borderColor: 'gray', borderWidth: 1}}
-        value={count + ''}
+        onChangeText={(text) => setState({...state, age: text})}
+        value={age + ''}
       />
+      <TouchableOpacity onPress={() => setData(state)}>
+        <View style={Styles.button}>
+          <Text style={Styles.textButton}>Kirim</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
