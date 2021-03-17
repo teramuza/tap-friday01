@@ -81,7 +81,7 @@ const HomeScreen = ({
 
     return (
       <TouchableWithoutFeedback
-        onPress={() => navigation.navigate(Routes.DetailScreen)}>
+        onPress={() => navigation.navigate('stack2')}>
         <View style={Styles.card}>
           <Image style={Styles.imageCard} source={imageCard} />
           <Text style={Styles.textCard}>{item.title}</Text>
