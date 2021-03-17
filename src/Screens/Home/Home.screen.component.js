@@ -66,7 +66,7 @@ const HomeScreen = ({
         </View>
         <View style={Styles.textSection}>
           <Text
-            onPress={() => increaseCount()}
+            onPress={null}
             onLongPress={() => decreaseCount()}
             style={Styles.text}>
             {'count: ' + count}
